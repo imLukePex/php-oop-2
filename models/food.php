@@ -2,6 +2,8 @@
 
     class Food extends Product {
 
+        private static $typology = "Cibo";
+
         private $expireDate;
 
         public function __construct($id, $title, $image, $price, Category $category, $expireDate) {
@@ -22,6 +24,11 @@
         public function setExpireDate($expireDate) {
 
             $this -> expireDate = $expireDate;
+        }
+
+        public function getTypology() {
+            
+            return self :: $typology;
         }
     }
 ?>

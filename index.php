@@ -15,8 +15,7 @@
             border-radius: 5px;
             padding: 10px;
             margin: 10px;
-            width: 23stm0px;
-            float: left;
+            width: 230px;         
             text-align: center;
         }
     </style>
@@ -26,19 +25,20 @@
 
     <h1>ARCA-BOOLEAN</h1>
     <h2>Prodotti per animali</h2>
-    <?php
+<?php
 
-        foreach ($prods as $prod) {
-            echo "<div class='card'>";
-            echo "<img src='{$prod -> getImage()}' width='200'>";
-            echo "<h2>{$prod -> getTitle()}</h2>";
-            echo "<p>Prezzo: {$prod -> getPrice()}</p>";
-            echo "<p>Category: 
-            <img src='{$prod -> getCategory() -> getIcon()}' width='30'> 
-            {$prod -> getCategory() -> getName()}</p>";
-            echo "</div>"; 
-        }
-    ?>
+    foreach ($prods as $prod) {
+        echo "<h3>{$prod -> getTypology()}";  
+        echo "<div class='card'>";
+        echo "<img src='{$prod -> getImage()}' width='200'>";
+        echo "<h2>{$prod -> getTitle()}</h2>";
+        echo "<p>Prezzo: {$prod -> getPrice()}</p>";
+        echo "<p>Category: 
+        <img src='{$prod -> getCategory() -> getIcon()}' width='30'> 
+        {$prod -> getCategory() -> getName()}</p>";
+        echo "</div>"; 
+    }
+?>
 
         <!-- // class Products {
 

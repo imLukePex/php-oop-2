@@ -2,6 +2,8 @@
 
     class AnimalHouse extends Product {
 
+        private static $typology = "Cucce";
+
         private $internalSize;
 
         public function __construct($id, $title, $image, $price, Category $category, $internalSize) {
@@ -22,6 +24,11 @@
         public function setInternalSize($internalSize) {
 
             $this -> internalSize = $internalSize;
+        }
+
+        public function getTypology() {
+            
+            return self :: $typology;
         }
     }
 ?>
