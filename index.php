@@ -10,6 +10,10 @@
             text-align: center;
         }
 
+        h3 {
+            font-size: 25px;
+        }
+
         .card {
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -21,14 +25,13 @@
     </style>
 </head>
 <body>
-    <img src="" alt="">
 
     <h1>ARCA-BOOLEAN</h1>
     <h2>Prodotti per animali</h2>
 <?php
 
     foreach ($prods as $prod) {
-        echo "<h3>{$prod -> getTypology()}";  
+        echo "<h3>{$prod -> getTypology()}</h3>";  
         echo "<div class='card'>";
         echo "<img src='{$prod -> getImage()}' width='200'>";
         echo "<h2>{$prod -> getTitle()}</h2>";
