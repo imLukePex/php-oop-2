@@ -4,7 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArcaBoolean</title>
-    <?php require_once(__DIR__ . "/db.php"); ?>
+    <?php 
+    
+        require_once(__DIR__ . "/db.php");
+        echo "<br>Price: " . $test_prod -> getPrice();
+        echo "<br>Full Price: " . $test_prod -> getFullPrice() . "€";
+
+        try {
+
+            $test_prod = new Product(1, 'Croccantini', 'https://arcaplanet.vtexassets.com/arquivos/ids/270797/Monge-All-Breeds-Adult-Salmone-e-Riso-12Kg.jpg?v=637852830908370000', '35€', 20, $cat_dog, '10/05/2024');
+        } catch (Exception $e) {
+
+            echo "Impossivile creare prodotto di test: " . $e -> getMessage();
+        }
+    
+    ?>
     <style>
         h1, h2 {
             text-align: center;

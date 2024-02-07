@@ -3,17 +3,21 @@
     class Product {
 
         private $id;
+
+        use Discount;
+
         private $title;
         private $image;
         private $price;
         private $category;
 
-        public function __construct($id, $title, $image, $price, Category $category) {
+        public function __construct($id, $title, $image, $price, $discount, Category $category) {
 
             $this -> setId($id);
             $this -> setTitle($title);
             $this -> setImage($image);
             $this -> setPrice($price);
+            $this -> setDiscount($discount);
             $this -> setCategory($category);
         }
 
@@ -33,6 +37,9 @@
         }
 
         public function setTitle($title) {
+
+            if (!is_string($title) || strlen($title) < 3)
+                throw new Exception("$title is not a valid title");
 
             $this -> title = $title;
         }
@@ -55,6 +62,11 @@
         public function setPrice($price) {
 
             $this -> price = $price;
+        }
+
+        public function getFullPrice() {
+            
+            return $this -> getPrice() / 100 * (100 - $this -> getDiscount());
         }
 
         public function getCategory() {

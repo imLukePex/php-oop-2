@@ -1,6 +1,7 @@
 <?php
 
     // REQUIRE
+    require_once(__DIR__ . "/models/discountTrait.php");
     require_once(__DIR__ . "/models/category.php");
     require_once(__DIR__ . "/models/product.php");
     require_once(__DIR__ . "/models/food.php");
@@ -9,6 +10,9 @@
     // CATEGORIES
     $cat_dog = new Category(1, 'dog', 'https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/dog.png');
     $cat_cat = new Category(2, 'cat', 'https://toppng.com/uploads/preview/free-download-cat-png-vector-icon-cat-transparent-background-cat-icon-transparent-background-11563035549ypnlilorb5.png');
+
+    // PRODUCT TEST
+    $test_prod = new Product(1, 'Croccantini', 'https://arcaplanet.vtexassets.com/arquivos/ids/270797/Monge-All-Breeds-Adult-Salmone-e-Riso-12Kg.jpg?v=637852830908370000', '35€', 20, $cat_dog, '10/05/2024');
     
     // PRODUCTS
     $prod_croccantini = new Food(1, 'Croccantini', 'https://arcaplanet.vtexassets.com/arquivos/ids/270797/Monge-All-Breeds-Adult-Salmone-e-Riso-12Kg.jpg?v=637852830908370000', '35€', $cat_dog, '10/05/2024');
